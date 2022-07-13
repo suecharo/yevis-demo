@@ -7,25 +7,30 @@ authors:
     name: Hirotaka Suetake
     affiliation: "The University of Tokyo, Ascade Inc."
     orcid: 0000-0003-2765-0049
+zenodo:
+  url: "https://zenodo.org/record/6828923"
+  id: 6828923
+  doi: 10.5281/zenodo.6828923
+  concept_doi: 10.5281/zenodo.6828922
 workflow:
   name: CWL_trimming_and_qc
-  readme: "https://raw.githubusercontent.com/sapporo-wes/yevis-cli/8e6dca6185b09ccadba80f292c6dafe774650083/README.md"
+  readme: "https://zenodo.org/api/files/5901034d-e736-4356-9cf5-9fd8ab4402d5/README.md"
   language:
     type: CWL
     version: v1.0
   files:
-    - url: "https://raw.githubusercontent.com/sapporo-wes/yevis-cli/8e6dca6185b09ccadba80f292c6dafe774650083/tests/CWL/wf/trimming_and_qc.packed.cwl"
+    - url: "https://zenodo.org/api/files/5901034d-e736-4356-9cf5-9fd8ab4402d5/trimming_and_qc.packed.cwl"
       target: trimming_and_qc.packed.cwl
       type: primary
   testing:
     - id: test_1
       files:
-        - url: "https://raw.githubusercontent.com/sapporo-wes/yevis-cli/8e6dca6185b09ccadba80f292c6dafe774650083/tests/CWL/test/wf_params.json"
+        - url: "https://zenodo.org/api/files/5901034d-e736-4356-9cf5-9fd8ab4402d5/wf_params.json"
           target: wf_params.json
           type: wf_params
-        - url: "https://raw.githubusercontent.com/sapporo-wes/yevis-cli/8e6dca6185b09ccadba80f292c6dafe774650083/tests/CWL/test/ERR034597_1.small.fq.gz"
+        - url: "https://zenodo.org/api/files/5901034d-e736-4356-9cf5-9fd8ab4402d5/ERR034597_1.small.fq.gz"
           target: ERR034597_1.small.fq.gz
           type: other
-        - url: "https://raw.githubusercontent.com/sapporo-wes/yevis-cli/8e6dca6185b09ccadba80f292c6dafe774650083/tests/CWL/test/ERR034597_2.small.fq.gz"
+        - url: "https://zenodo.org/api/files/5901034d-e736-4356-9cf5-9fd8ab4402d5/ERR034597_2.small.fq.gz"
           target: ERR034597_2.small.fq.gz
           type: other
