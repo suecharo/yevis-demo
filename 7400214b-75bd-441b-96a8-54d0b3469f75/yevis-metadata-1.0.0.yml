@@ -1,0 +1,42 @@
+---
+id: 7400214b-75bd-441b-96a8-54d0b3469f75
+version: 1.0.0
+license: Apache-2.0
+authors:
+  - github_account: suecharo
+    name: Hirotaka Suetake
+    affiliation: The University of Tokyo
+workflow:
+  name: trimming_and_qc
+  readme: "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/40c3a9453c1d8f9cd8210d16d5c889501054cdbc/README.md"
+  language:
+    type: CWL
+    version: v1.0
+  files:
+    - url: "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/40c3a9453c1d8f9cd8210d16d5c889501054cdbc/tests/resources/cwltool/ERR034597_1.small.fq.gz"
+      target: ERR034597_1.small.fq.gz
+      type: secondary
+    - url: "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/40c3a9453c1d8f9cd8210d16d5c889501054cdbc/tests/resources/cwltool/ERR034597_2.small.fq.gz"
+      target: ERR034597_2.small.fq.gz
+      type: secondary
+    - url: "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/40c3a9453c1d8f9cd8210d16d5c889501054cdbc/tests/resources/cwltool/fastqc.cwl"
+      target: fastqc.cwl
+      type: secondary
+    - url: "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/40c3a9453c1d8f9cd8210d16d5c889501054cdbc/tests/resources/cwltool/trimming_and_qc.cwl"
+      target: trimming_and_qc.cwl
+      type: primary
+    - url: "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/40c3a9453c1d8f9cd8210d16d5c889501054cdbc/tests/resources/cwltool/trimmomatic_pe.cwl"
+      target: trimmomatic_pe.cwl
+      type: secondary
+  testing:
+    - id: test_1
+      files:
+        - url: "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/40c3a9453c1d8f9cd8210d16d5c889501054cdbc/tests/curl_example/post_runs/cwltool/attach_all_files/workflow_params.json"
+          target: workflow_params.json
+          type: wf_params
+        - url: "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/40c3a9453c1d8f9cd8210d16d5c889501054cdbc/tests/resources/cwltool/ERR034597_1.small.fq.gz"
+          target: ERR034597_1.small.fq.gz
+          type: other
+        - url: "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/40c3a9453c1d8f9cd8210d16d5c889501054cdbc/tests/resources/cwltool/ERR034597_2.small.fq.gz"
+          target: ERR034597_2.small.fq.gz
+          type: other
